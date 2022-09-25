@@ -1,0 +1,18 @@
+.TodoSearch {
+  background: var(--dark-gray);
+  border-radius: 2rem;
+  width: 100%;
+  padding: 1rem;
+  border: 0;
+  margin-bottom: 4rem;
+}
+
+.TodoSearch::placeholder {
+  color: var(--light-gray);
+}
+
+.TodoSearch:focus, .TodoSearch:active {
+  color: var(--font-color);
+  border: 0.1rem solid var(--primary-color) !important;
+  outline: 0;
+}

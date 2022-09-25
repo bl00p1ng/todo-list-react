@@ -1,0 +1,29 @@
+:root {
+  --bg-color: #17171a;
+  --primary-color: #fca311;
+  --blue: #2664fa;
+  --dark-gray: #272a2c;
+  --light-gray: #62636d;
+  --font-color: #eeeeee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--font-color);
+}
+
+.container {
+  width: 60%;
+  margin: 0 auto;
+}

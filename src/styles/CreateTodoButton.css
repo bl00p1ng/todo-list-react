@@ -1,0 +1,23 @@
+.CreateTodoButton {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  border: 0;
+  color: var(--bg-color);
+  font-size: 3rem;
+  cursor: pointer;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(0);
+  transition: .3s ease;
+}
+
+.CreateTodoButton:hover {
+  transform: rotate(224deg);
+}

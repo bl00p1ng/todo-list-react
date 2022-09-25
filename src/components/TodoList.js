@@ -1,11 +1,11 @@
-function TodoList(props) {
-    return (
-      <section>
-        <ul>
-            { props.children }
-        </ul>
-      </section>
-    );
-  }
-  
-  export default TodoList;
+function TodoList (props) {
+  return (
+    <section className='TodoList'>
+      <ul>
+        {props.children}
+      </ul>
+    </section>
+  )
+}
+
+export default TodoList

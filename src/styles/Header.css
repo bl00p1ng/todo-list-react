@@ -1,0 +1,10 @@
+.Header {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-align: center;
+  background: linear-gradient(to bottom right, #fca311, #e74f21);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

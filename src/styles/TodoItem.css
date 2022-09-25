@@ -1,0 +1,39 @@
+.TodoItem {
+  background-color: var(--dark-gray);
+  list-style: none;
+  width: 100%;
+  padding: 1.6rem 0.8rem;
+  border-radius: 1.6rem;
+  margin-bottom: 1.6rem;
+  border: 0.1rem solid var(--dark-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.TodoItem:hover {
+  border: 0.1rem solid var(--primary-color);
+}
+
+.TodoItem .task-name {
+  font-size: 1.6rem;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.TodoItem .Icon {
+  width: 2.5rem;
+  cursor: pointer;
+}
+
+.completed {
+  background-color: var(--primary-color);
+  text-decoration: line-through;
+}
+
+.Icon-check--active {
+  border: 0.1rem solid white;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+}

@@ -10,11 +10,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "lint": "standard",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
-      "react-app"
+      "./node_modules/standard/eslintrc.json"
     ]
   },
   "browserslist": {
@@ -28,5 +29,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "standard": "^17.0.0"
   }
 }
