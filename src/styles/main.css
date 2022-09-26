@@ -27,3 +27,10 @@ body {
   width: 60%;
   margin: 0 auto;
 }
+
+@media (max-width: 472px) {
+  .container {
+    width: 100%;
+    padding: 0 1.6rem;
+  }
+}

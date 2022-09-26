@@ -1,9 +1,12 @@
 import '../styles/TodoItem.css'
 
-function TodoItem (props) {
+function TodoItem ({ text, completed, onComplete, onDelete }) {
   return (
-    <li className={`TodoItem ${props.completed && 'completed'}`}>
-      <span className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}>
+    <li className={`TodoItem ${completed && 'completed'}`}>
+      <span
+        className={`Icon Icon-check ${completed && 'Icon-check--active'}`}
+        onClick={onComplete}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
@@ -20,9 +23,12 @@ function TodoItem (props) {
         </svg>
       </span>
 
-      <p className='task-name'>{props.text}</p>
+      <p className='task-name'>{text}</p>
 
-      <span className='Icon Icon-delete'>
+      <span
+        className='Icon Icon-delete'
+        onClick={onDelete}
+      >
         <svg
           xmlns='http://www.w3.org/2000/svg'
           fill='none'
