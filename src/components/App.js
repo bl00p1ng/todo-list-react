@@ -1,11 +1,5 @@
 import { useState } from 'react'
-import TodoCounter from './components/TodoCounter'
-import TodoItem from './components/TodoItem'
-import TodoSearch from './components/TodoSearch'
-import TodoList from './components/TodoList'
-import CreateTodoButton from './components/CreateTodoButton'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import UI from './UI'
 
 const defaultToDos = [
   { text: 'Estudiar React', completed: true },
@@ -74,35 +68,16 @@ function App () {
   }
 
   return (
-    <div className='container'>
-      <Header />
-
-      <TodoCounter
-        totalToDos={totalToDos}
-        completedToDos={completedToDos}
-      />
-
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
-
-      <TodoList>
-        {searchedToDos.map(toDo => (
-          <TodoItem
-            key={toDo.text}
-            text={toDo.text}
-            completed={toDo.completed}
-            onComplete={() => toggleCompleteTodo(toDo.text)}
-            onDelete={() => deleteTodo(toDo.text)}
-          />
-        ))}
-      </TodoList>
-
-      <CreateTodoButton />
-
-      <Footer />
-    </div>
+    // eslint-disable-next-line react/jsx-pascal-case
+    <UI
+      totalToDos={totalToDos}
+      completedToDos={completedToDos}
+      searchValue={searchValue}
+      setSearchValue={setSearchValue}
+      searchedToDos={searchedToDos}
+      toggleCompleteTodo={toggleCompleteTodo}
+      deleteTodo={deleteTodo}
+    />
   )
 }
 
