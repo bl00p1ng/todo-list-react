@@ -1,15 +1,16 @@
 import { useState } from 'react'
+import useLocalStorage from '../hooks/useLocalStorage'
 import UI from './UI'
 
-const defaultToDos = [
-  { text: 'Estudiar React', completed: true },
-  { text: 'Trabajar en mi website', completed: false },
-  { text: 'Desarrollar un proyecto', completed: true }
-]
+// const defaultToDos = [
+//   { text: 'Estudiar React', completed: true },
+//   { text: 'Trabajar en mi website', completed: false },
+//   { text: 'Desarrollar un proyecto', completed: true }
+// ]
 
 function App () {
-  // Almacenar las tareas en el state
-  const [toDos, setToDos] = useState(defaultToDos)
+  // Leer/escribir tareas en localStorage
+  const [toDos, saveToDos] = useLocalStorage('TODOS_V1', [])
 
   // Tarea a buscar
   const [searchValue, setSearchValue] = useState('')
@@ -49,7 +50,7 @@ function App () {
     toDosUpdated[toDoIndex].completed = !toDosUpdated[toDoIndex].completed
 
     // Actualizar las tareas en el estado
-    setToDos(toDosUpdated)
+    saveToDos(toDosUpdated)
   }
 
   // Eliminar tarea
@@ -64,7 +65,7 @@ function App () {
     toDosUpdated.splice(toDoIndex, 1)
 
     // Actualizar las tareas en el estado
-    setToDos(toDosUpdated)
+    saveToDos(toDosUpdated)
   }
 
   return (
