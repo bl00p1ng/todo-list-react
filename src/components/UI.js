@@ -1,33 +1,28 @@
+import { useContext } from 'react'
+import { ToDoContext } from '../context/ToDoContext'
 import Header from './Header'
 import TodoCounter from './TodoCounter'
-import TodoItem from './TodoItem'
 import TodoSearch from './TodoSearch'
 import TodoList from './TodoList'
+import TodoItem from './TodoItem'
 import CreateTodoButton from './CreateTodoButton'
 import Footer from './Footer'
 
-function UI ({
-  totalToDos,
-  completedToDos,
-  searchValue,
-  setSearchValue,
-  searchedToDos,
-  toggleCompleteTodo,
-  deleteTodo
-}) {
+function UI () {
+  // Obtener las propiedades del Context
+  const {
+    searchedToDos,
+    toggleCompleteTodo,
+    deleteTodo
+  } = useContext(ToDoContext)
+
   return (
     <div className='container'>
       <Header />
 
-      <TodoCounter
-        totalToDos={totalToDos}
-        completedToDos={completedToDos}
-      />
+      <TodoCounter />
 
-      <TodoSearch
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />
+      <TodoSearch />
 
       <TodoList>
         {searchedToDos.map(toDo => (
