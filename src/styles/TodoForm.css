@@ -60,3 +60,16 @@
 .form-modal .save-button:hover {
   background-color: #f7ae39;
 }
+
+
+@media(min-width: 426px) {
+  .form-modal {
+    width: 80%;
+  }
+}
+
+@media(min-width: 769px) {
+  .form-modal {
+    width: 70%;
+  }
+}
