@@ -7,6 +7,9 @@ function ToDoProvider (props) {
   // Leer/escribir tareas en localStorage
   const [toDos, saveToDos] = useLocalStorage('TODOS_V1', [])
 
+  // Abrir/cerrar el modal
+  const [toggleModal, setToggleModal] = useState(false)
+
   // Tarea a buscar
   const [searchValue, setSearchValue] = useState('')
 
@@ -48,6 +51,19 @@ function ToDoProvider (props) {
     saveToDos(toDosUpdated)
   }
 
+  // Agregar una tarea
+  const addToDo = (toDoText) => {
+    // Hacer una copia de las tareas existentes
+    const toDosUpdated = [...toDos]
+
+    toDosUpdated.push({
+      text: toDoText,
+      completed: false
+    })
+
+    saveToDos(toDosUpdated)
+  }
+
   // Eliminar tarea
   const deleteTodo = (toDoText) => {
     // Obtener el indice de la tarea a eliminar
@@ -71,7 +87,10 @@ function ToDoProvider (props) {
     setSearchValue,
     searchedToDos,
     toggleCompleteTodo,
-    deleteTodo
+    addToDo,
+    deleteTodo,
+    toggleModal,
+    setToggleModal
   }
 
   return (

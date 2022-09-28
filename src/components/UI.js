@@ -7,13 +7,17 @@ import TodoList from './TodoList'
 import TodoItem from './TodoItem'
 import CreateTodoButton from './CreateTodoButton'
 import Footer from './Footer'
+import Modal from './Modal'
+import TodoForm from './ToDoForm'
 
 function UI () {
   // Obtener las propiedades del Context
   const {
     searchedToDos,
     toggleCompleteTodo,
-    deleteTodo
+    deleteTodo,
+    toggleModal,
+    setToggleModal
   } = useContext(ToDoContext)
 
   return (
@@ -36,7 +40,15 @@ function UI () {
         ))}
       </TodoList>
 
-      <CreateTodoButton />
+      {toggleModal && (
+        <Modal>
+          <TodoForm />
+        </Modal>
+      )}
+
+      <CreateTodoButton
+        setToggleModal={setToggleModal}
+      />
 
       <Footer />
     </div>

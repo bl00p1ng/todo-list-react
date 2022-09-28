@@ -3,12 +3,7 @@
   justify-content: center;
   text-align: center;
   font-size: 1.2rem;
-}
-
-.Footer p {
-  position: absolute;
-  bottom: 0;
-  margin-bottom: 1.6rem;
+  margin: 1.6rem 0;
 }
 
 .Footer a {
